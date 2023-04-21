@@ -17,6 +17,7 @@ if (pets) {
         createCard(pet, block);
     }
     } catch(error) {
+        console.warn(error.message);
         pets = null;
     }
 }

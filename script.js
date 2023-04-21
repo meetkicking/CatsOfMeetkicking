@@ -1,17 +1,3 @@
-/*let pet = {
-    name: "Уголовник",
-    favourite: false,
-    image: "https://datavyhoda.ru/wp-content/uploads/2021/06/v-tyurme-kot-v-sapogax-2-poslednee-zhelanie.jpg",
-}
-
-let pet2 = {
-    name: "Сушка",
-    favourite: true,
-}*/
-
-/*createCard(pet);
-createCard(pet2);*/
-
 if (!pets) {
 fetch(path + "/show")
     .then(function (response) {
@@ -23,9 +9,9 @@ fetch(path + "/show")
         if (data.length) {
             pets = data;
             localStorage.setItem("CatsOfMeetkicking", JSON.stringify(data));
-            /*for (let pet of data) {
+            for (let pet of data) {
                 createCard(pet, block);
-            }*/
+            }
         }
     })
 }
@@ -89,7 +75,8 @@ fetch(path + "/show")
         .then(response => response.json())
         .then(ids => {
             console.log(ids);
-            body.id = ids[ids.length - 1] + 1;
+            body.id = ids.length > 0 ? ids[ids.length - 1] + 1 : 1;
+            //body.id = ids[ids.length - 1] + 1;
             console.log(body);
             return fetch(path + "/add", {
                 method: "POST",
@@ -114,4 +101,3 @@ fetch(path + "/show")
             console.log(data);
         })*/
     })
-    

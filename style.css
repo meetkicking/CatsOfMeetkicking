@@ -4,15 +4,16 @@ body {
 }
 
 h2 {
+    text-align: center;
     margin: 0;
 }
 
 .wrapper {
     min-height: 100vh;
-    /*background-color:tomato;*/
+    background-color:chartreuse;
     padding: 30px;
     margin: auto;
-    max-width: 1020px;
+    max-width: auto;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -23,8 +24,8 @@ h2 {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding-bottom: 12px;
+    gap: 5px;
+    padding-bottom: 20px;
     align-items: center;
     border-radius: 8px;
     overflow: hidden;
@@ -35,7 +36,7 @@ h2 {
 .card .like {
     position: absolute;
     right: 8px;
-    bottom: 6px;
+    bottom: 8px;
     color: darkred;
     cursor: pointer;
 }
@@ -46,8 +47,20 @@ h2 {
     width: 100%;
     background-image: url(https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_square.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
+}
+
+.card__trash {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    cursor: pointer;
+    color: blueviolet;
+}
+
+.card__trash:hover {
+    color: chocolate;
 }
 
 .pic.tmp {
@@ -117,9 +130,10 @@ form {
     display: grid;
     margin-top: 16px;
     gap: 8px;
+    text-align: center;
 }
 
-input:note([type="checkbox"]) {
+input/*:note([type="checkbox"])*/ {
     width: 100%;
     box-sizing: border-box;
     height: 30px;
