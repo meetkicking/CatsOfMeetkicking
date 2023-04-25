@@ -29,7 +29,7 @@ h2 {
     align-items: center;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 15px chocolate;
+    box-shadow: 0 0 35px chocolate;
     position: relative;
 }
 
@@ -42,7 +42,7 @@ h2 {
 }
 
 .card .pic {
-    height: 100px;
+    height: 125px;
     background-color:teal;
     width: 100%;
     background-image: url(https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_square.jpg);

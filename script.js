@@ -62,7 +62,7 @@ fetch(path + "/show")
             const element = addForm.elements[index];
             console.log(element.name, element.value);
             if (element.name) {
-                if (element.name === "favourite") {
+                if (element.name === "favorite") {
                 body[element.name] = element.checked;
                 } else {
                     body[element.name] = element.value;

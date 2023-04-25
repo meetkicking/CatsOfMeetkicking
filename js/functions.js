@@ -17,9 +17,10 @@ function createCard(pet, tag) {
 
     const cardLike = document.createElement("i");
     cardLike.className = "like fa-heart";
-    cardLike.classList.add(pet.favourite ? "fa-solid" : "fa-regular");
-    cardLike.addEventListener("click", element => {
-        setLike(cardLike, pet.id, !pet.favourite);
+    cardLike.classList.add(pet.favorite ? "fa-solid" : "fa-regular");
+    cardLike.addEventListener("click", event => {
+        event.stopPropagation();
+        setLike(cardLike, pet.id, !pet.favorite);
     });
 
 
@@ -27,8 +28,7 @@ const trash = document.createElement("i");
 trash.className = "fa-solid fa-trash card__trash";
 trash.addEventListener("click", event => {
     event.stopPropagation();
-//deleteCard(???, event.currentTarget.parentElement);
-deleteCard(pet.id, card);
+    deleteCard(pet.id, card);
 });
 
 
@@ -36,9 +36,11 @@ deleteCard(pet.id, card);
     tag.append(card);
 
     
+    /*
     card.addEventListener("click", (event) => {
-        deleteCard(cat.id, card)
+        deleteCard(pet.id, card);
     });
+    */
     tag.append(card);
 
     //console.log(cardImg.offsetWidth);
@@ -55,14 +57,14 @@ deleteCard(pet.id, card);
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({favourite: like}),
+        body: JSON.stringify({favorite: like}),
     })
     .then(response => response.json())
     .then(data => {
         console.log(data);
         pets = pets.map(pet => {
             if (pet.id === id) {
-                pet.favourite = like;
+                pet.favorite = like;
             }
             return pet;
         });
@@ -78,6 +80,8 @@ deleteCard(pet.id, card);
             .then(response => {
                 //console.log(response.status);
                 if (response.status === 200) {
+                    pets = pets.filter(el => el.id !== id);
+                    localStorage.setItem("CatsOfMeetkicking", JSON.stringify(pets));
                     element.remove();
                 }
             });
