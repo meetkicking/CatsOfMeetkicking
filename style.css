@@ -1,149 +1,153 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 h2 {
-    text-align: center;
-    margin: 0;
+  color: white;
+  text-align: center;
+  margin: 0;
 }
 
 .wrapper {
-    min-height: 100vh;
-    background-color:chartreuse;
-    padding: 30px;
-    margin: auto;
-    max-width: auto;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    align-content: flex-start;
+  min-height: 100vh;
+  /* background-image: url("https://kalix.club/uploads/posts/2023-03/1677808726_kalix-club-p-kotiki-fon-na-rabochii-stol-instagram-15.jpg"); */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: orange;
+  padding: 30px;
+  margin: auto;
+  max-width: auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  align-content: flex-start;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding-bottom: 20px;
-    align-items: center;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 35px chocolate;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 20px;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 35px #88e7e7;
+  position: relative;
 }
 
 .card .like {
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
-    color: darkred;
-    cursor: pointer;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  color: darkred;
+  cursor: pointer;
 }
 
 .card .pic {
-    height: 125px;
-    background-color:teal;
-    width: 100%;
-    background-image: url(https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_square.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
+  height: 125px;
+  background-color: teal;
+  width: 100%;
+  background-image: url(https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_square.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .card__trash {
-    position: absolute;
-    left: 8px;
-    bottom: 8px;
-    cursor: pointer;
-    color: blueviolet;
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  cursor: pointer;
+  color: blueviolet;
 }
 
 .card__trash:hover {
-    color: chocolate;
+  color: #3eb489;
 }
 
 .pic.tmp {
-    background-image: url(images/default.png);
-    background-size: contain;
+  background-image: url(images/default.png);
+  background-size: contain;
 }
 
 .btn {
-    outline: none;
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: blueviolet;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
+  outline: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .btn:hover {
-    color: chocolate;
-    transform: scale(1.1, 1.1);
+  color: #96c5f7;
+  transform: scale(1.1, 1.1);
 }
 
 .add {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
 }
 
 .modal-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 .modal-block {
-    background-color: rgba(62, 62, 62, 0.8);
-    backdrop-filter: blur(2px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
+  background-color: rgba(62, 62, 62, 0.8);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-block.active {
-    display: flex;
+  display: flex;
 }
 
 .modal {
-    background-color: white;
-    padding: 16px;
-    border-radius: 8px;
-    width: calc(100% - 100px);
-    max-width: 300px;
-    max-height: calc(100% - 100px);
-    overflow: auto;
-    position: relative;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  width: calc(100% - 100px);
+  max-width: 300px;
+  max-height: calc(100% - 100px);
+  overflow: auto;
+  position: relative;
 }
 
 form {
-    display: grid;
-    margin-top: 16px;
-    gap: 8px;
-    text-align: center;
+  display: grid;
+  margin-top: 16px;
+  gap: 8px;
+  text-align: center;
 }
 
 input/*:note([type="checkbox"])*/ {
-    width: 100%;
-    box-sizing: border-box;
-    height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
 }
 
 .preview {
-    height: 200px;
-    background-color: chocolate;
-    border-radius: 8px;
-    background-image: url("images/default.png");
-    background-position: center;
-    background-size: cover;
+  height: 200px;
+  background-color: chocolate;
+  border-radius: 8px;
+  background-image: url("images/default.png");
+  background-position: center;
+  background-size: cover;
 }
